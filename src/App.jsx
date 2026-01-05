@@ -28,30 +28,16 @@ function App() {
       className={`${colors[colorIn]}
      overflow-x-hidden`}
     >
-      <Navbar />
-      <div id="home" className="flex items-center justify-center h-screen">
-        <Home />
+      <Navbar currentColor={colors[colorIn]} onColorChange={changeColor} />
+      <div id="clock" className="flex items-center justify-center h-screen">
+        <Clock />
       </div>
 
-      <div id="change-color" className="flex items-center justify-center h-screen">
-        <button
-          className="bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-full w-82 h-82
-                       p-16 transform hover:text-6xl hover:scale-110 transition-all duration-300 ease-in-out
-                       text-5xl flex justify-center items-center
-                       "
-          onClick={changeColor}
-        >
-          Change Color!
-        </button>
-      </div>
       <div id="counter" className="flex items-center justify-center h-screen">
         <Counter />
       </div>
       <div id="stopwatch" className="flex items-center justify-center h-screen">
         <StopWatch />
-      </div>
-      <div id="clock" className="flex items-center justify-center h-screen">
-        <Clock />
       </div>
     </div>
   );

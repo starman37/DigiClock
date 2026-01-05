@@ -1,4 +1,6 @@
-const Navbar = () => {
+import { useState } from "react";
+
+const Navbar = ({ currentColor, onColorChange }) => {
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -11,27 +13,23 @@ const Navbar = () => {
       <div className="flex justify-between ">
         <div className="ml-10">
           <a
-            href="#home"
+            href="#clock"
             onClick={(e) => {
               e.preventDefault();
-              scrollToSection("home");
+              scrollToSection("clock");
             }}
             className="text-lg font-semibold hover:text-blue-400 transition-colors duration-200 rounded-md px-3 py-1"
           >
             Home
           </a>
         </div>
-        <div className="mr-10">
-          <a
-            href="#change-color"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection("change-color");
-            }}
-            className="text-lg font-semibold hover:text-blue-400 transition-colors duration-200 rounded-md px-3 py-1"
+        <div className="mr-10 flex items-center gap-4">
+          <button
+            onClick={onColorChange}
+            className="bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-md px-3 py-1 mt-1 transition-colors duration-200"
           >
             Change Color
-          </a>
+          </button>
           <a
             href="#counter"
             onClick={(e) => {
@@ -51,16 +49,6 @@ const Navbar = () => {
             className="text-lg font-semibold hover:text-blue-400 transition-colors duration-200 rounded-md px-3 py-1"
           >
             Stopwatch
-          </a>
-          <a
-            href="#clock"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection("clock");
-            }}
-            className="text-lg font-semibold hover:text-blue-400 transition-colors duration-200 rounded-md px-3 py-1"
-          >
-            Clock
           </a>
         </div>
       </div>
