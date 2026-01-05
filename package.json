@@ -1,9 +1,9 @@
 {
-  "name": "project2",
+  "name": "DigiClock",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://starman37.github.io/project2",
+  "homepage": "https://starman37.github.io/DigiClock",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
